@@ -40,7 +40,6 @@ struct CandlesView: View {
                     .foregroundStyle(.red)
             }
 
-            Text(viewModel.symbol)
 
             Chart(viewModel.candles, id: \.t) { candle in
                 let color: Color = candle.c >= candle.o ? .green : .red
@@ -102,7 +101,7 @@ struct CandlesView: View {
         }
     }
 
-    /// Ustawia widok na cały pobrany zakres (wywoływane po każdym załadowaniu danych)
+    
     private func resetView() {
         guard let first = viewModel.candles.first?.t else { return }
         let length = max(dataSpan, minLength)

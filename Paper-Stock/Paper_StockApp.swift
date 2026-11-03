@@ -13,8 +13,7 @@ struct Paper_StockApp: App {
     var body: some Scene {
          WindowGroup {
              if loginViewModel.isAuthenticated {
-//                CandlesView(symbol: "TSLA")
-                 Top10View()
+                        MainTabView()
                      .environmentObject(loginViewModel)
              }
              

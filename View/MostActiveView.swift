@@ -35,7 +35,7 @@ struct MostActiveView: View {
                         }
                         Spacer()
                         VStack(alignment: .trailing) {
-                            Text("\(stock.price, specifier: "%.2f")")
+                            Text(stock.price, format: .currency(code: "USD"))
                             Text("\(stock.percentageChange, specifier: "%.2f")%")
                                 .foregroundColor(stock.percentageChange >= 0 ? .green : .red)
                         }

@@ -10,7 +10,7 @@ import Foundation
 class SearchService {
     
     func getSearch(q: String, logoSize: Int = 64) async throws -> [SearchResponse] {
-        guard var components = URLComponents(string: "\(Constants.baseUrl)/stocks/search/") else {
+        guard var components = URLComponents(string: "\(Constants.baseUrl)/stocks/search") else {
             throw URLError(.badURL)
         }
         

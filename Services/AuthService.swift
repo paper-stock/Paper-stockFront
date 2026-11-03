@@ -21,35 +21,6 @@ class AuthService {
 
     private var refreshTask: Task<String, Error>?
 
-    // MARK: - Register (bez zmian)
-
-    func register(displayName: String, email: String, password: String) async throws -> RegisterResponse {
-        guard let url = URL(string: "\(Constants.baseUrl)/auth/register") else {
-            throw URLError(.badURL)
-        }
-
-        let body = RegisterRequest(displayName: displayName, email: email, password: password)
-
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.httpBody = try JSONEncoder().encode(body)
-
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        print("Odpowiedź serwera:", String(data: data, encoding: .utf8) ?? "brak")
-
-        if let httpResponse = response as? HTTPURLResponse {
-            print("Status code:", httpResponse.statusCode)
-        }
-        guard let httpResponse = response as? HTTPURLResponse,
-              (200...299).contains(httpResponse.statusCode) else {
-            throw URLError(.badServerResponse)
-        }
-        return try JSONDecoder().decode(RegisterResponse.self, from: data)
-    }
-
-    // MARK: - Login
-
     func login(email: String, password: String) async throws -> LoginReponse {
         guard let url = URL(string: "\(Constants.baseUrl)/auth/login") else {
             throw URLError(.badURL)
@@ -164,30 +135,6 @@ class AuthService {
         }
 
         store.clear()
-    }
-    
-    func whoAmI() async throws -> WhoAmIResponse {
-        guard let url = URL(string: "\(Constants.baseUrl)/auth/whoami") else {
-            throw URLError(.badURL)
-        }
-
-        let token = try await validAccessToken()
-
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "GET"
-        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-
-
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        print("Odpowiedź serwera (whoAmI):", String(data: data, encoding: .utf8) ?? "brak")
-
-        
-        guard let httpResponse = response as? HTTPURLResponse,
-              (200...299).contains(httpResponse.statusCode) else {
-            throw URLError(.badServerResponse)
-        }
-
-        return try JSONDecoder().decode(WhoAmIResponse.self, from: data)
     }
     
     func changePassword(oldPassword: String, newPassword: String) async throws {

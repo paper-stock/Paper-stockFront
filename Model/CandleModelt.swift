@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CandleModel: Decodable {
+struct CandleModel: Decodable, Hashable {
     let symbol: String
     let timeframe: Timeframe
     let o: Double

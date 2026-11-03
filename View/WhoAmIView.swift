@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct WhoAmIView: View {
+    @StateObject private var viewModel = WhoAmIViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if viewModel.isLoading {
+                ProgressView()
+            } else if let error = viewModel.errorMessage {
+                Text(error)
+            } else if let user = viewModel.user {
+                Text(user.email)
+            }
+        }
+        .task {
+            await viewModel.load()
+        }
     }
 }
 

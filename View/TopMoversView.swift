@@ -44,7 +44,7 @@ struct TopMoversView: View {
                             }
                             Spacer()
                             VStack(alignment: .trailing) {
-                                Text("\(stock.price, specifier: "%.2f")")
+                                Text(stock.price, format: .currency(code: "USD"))
                                 Text("\(stock.percentChange, specifier: "%.2f")%")
                                     .foregroundColor(stock.percentChange >= 0 ? .green : .red)
                             }
