@@ -7,3 +7,6 @@
 
 // Configuration settings file format documentation can be found at:
 // https://developer.apple.com/documentation/xcode/adding-a-build-configuration-file-to-your-project
+API_HOST = localhost:8080
+// API_HOST = 192.168.1.138:8080
+API_SCHEME = http
