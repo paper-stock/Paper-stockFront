@@ -3,6 +3,7 @@ import Charts
 
 struct CandlesView: View {
     @StateObject private var viewModel: CandleViewModel
+    @StateObject private var liveCandle = LivePriceService()
     
     @State private var rawSelectedDate: Date?
     private var selectedCandle: CandleModel? {
@@ -41,7 +42,10 @@ struct CandlesView: View {
     init(symbol: String) {
         _viewModel = StateObject(wrappedValue: CandleViewModel(symbol: symbol))
     }
-
+    
+    
+   
+    
     var body: some View {
         VStack(spacing: 16) {
             if let errorMessage = viewModel.errorMessage {
@@ -74,6 +78,7 @@ struct CandlesView: View {
                         yEnd: .value("Close", candle.c)
                     )
                     .foregroundStyle(color)
+                    
                 }
                 if let selected = selectedCandle{
                     RuleMark(

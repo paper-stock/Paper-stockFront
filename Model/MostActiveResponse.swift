@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MostActiveResponse: Codable, Identifiable {
+struct MostActiveResponse: Codable, Identifiable, Hashable {
     let id: String
     let exchange: String
     let symbol: String

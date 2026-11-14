@@ -6,3 +6,10 @@
 //
 
 import Foundation
+
+struct SnapShotResponse: Decodable {
+    let symbol: String
+    let price: Double
+    let amountChange: Double
+    let percentageChange: Double
+}

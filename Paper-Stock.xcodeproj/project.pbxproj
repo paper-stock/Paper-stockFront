@@ -28,6 +28,13 @@
 		AD2FAFA0301A090800D60CBE /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2FAF9F301A090400D60CBE /* TokenStore.swift */; };
 		AD2FAFA2301A0AB700D60CBE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2FAFA1301A0AB700D60CBE /* LoginViewModel.swift */; };
 		AD2FAFA4301A0AD600D60CBE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2FAFA3301A0AD600D60CBE /* LoginView.swift */; };
+		AD6BA70E30A716EE0012AA8D /* HistoryPriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA70D30A716EE0012AA8D /* HistoryPriceResponse.swift */; };
+		AD6BA71030A717DD0012AA8D /* HistoryPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA70F30A717DD0012AA8D /* HistoryPriceService.swift */; };
+		AD6BA71230A71ACA0012AA8D /* HistoricPriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA71130A71ACA0012AA8D /* HistoricPriceViewModel.swift */; };
+		AD6BA71430A71F4C0012AA8D /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA71330A71F4C0012AA8D /* TestView.swift */; };
+		AD6BA71630A727FD0012AA8D /* SnapShotResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA71530A727FD0012AA8D /* SnapShotResponse.swift */; };
+		AD6BA71830A7289C0012AA8D /* SnapShotService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA71730A7289C0012AA8D /* SnapShotService.swift */; };
+		AD6BA71A30A72C040012AA8D /* SnapShotViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA71930A72C040012AA8D /* SnapShotViewModel.swift */; };
 		AD814D7F30A318FF007B7C5B /* Debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AD814D7E30A318FF007B7C5B /* Debug.xcconfig */; };
 		AD814D8130A31916007B7C5B /* Release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = AD814D8030A31916007B7C5B /* Release.xcconfig */; };
 		AD834D503090BB5F00A2ABEE /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD834D4F3090BB5F00A2ABEE /* SearchResponse.swift */; };
@@ -92,6 +99,13 @@
 		AD2FAF9F301A090400D60CBE /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
 		AD2FAFA1301A0AB700D60CBE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AD2FAFA3301A0AD600D60CBE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AD6BA70D30A716EE0012AA8D /* HistoryPriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPriceResponse.swift; sourceTree = "<group>"; };
+		AD6BA70F30A717DD0012AA8D /* HistoryPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPriceService.swift; sourceTree = "<group>"; };
+		AD6BA71130A71ACA0012AA8D /* HistoricPriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricPriceViewModel.swift; sourceTree = "<group>"; };
+		AD6BA71330A71F4C0012AA8D /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		AD6BA71530A727FD0012AA8D /* SnapShotResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotResponse.swift; sourceTree = "<group>"; };
+		AD6BA71730A7289C0012AA8D /* SnapShotService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotService.swift; sourceTree = "<group>"; };
+		AD6BA71930A72C040012AA8D /* SnapShotViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapShotViewModel.swift; sourceTree = "<group>"; };
 		AD814D7E30A318FF007B7C5B /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		AD814D8030A31916007B7C5B /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		AD834D4F3090BB5F00A2ABEE /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
@@ -215,6 +229,8 @@
 				ADBA8F793087F27700CDADF0 /* CandleModelt.swift */,
 				AD834D4F3090BB5F00A2ABEE /* SearchResponse.swift */,
 				ADA9A6A330960C3A004D052B /* WhoAmIModel.swift */,
+				AD6BA70D30A716EE0012AA8D /* HistoryPriceResponse.swift */,
+				AD6BA71530A727FD0012AA8D /* SnapShotResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -230,6 +246,8 @@
 				AD834DAF3090F79300A2ABEE /* SearchViewModel.swift */,
 				ADA9A6A7309611C3004D052B /* WhoAmIViewModel.swift */,
 				ADA9A6C13098AD4B004D052B /* RegisterViewModel.swift */,
+				AD6BA71130A71ACA0012AA8D /* HistoricPriceViewModel.swift */,
+				AD6BA71930A72C040012AA8D /* SnapShotViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -247,6 +265,7 @@
 				AD834DB13091001D00A2ABEE /* SearchView.swift */,
 				ADA9A6A9309616C5004D052B /* WhoAmIView.swift */,
 				ADA9A6C53098B69F004D052B /* RegisterView.swift */,
+				AD6BA71330A71F4C0012AA8D /* TestView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +282,8 @@
 				AD834D533090BC6000A2ABEE /* SearchService.swift */,
 				ADA9A6A530960CD3004D052B /* WhoAmIService.swift */,
 				ADA9A6BF30989F98004D052B /* RegisterService.swift */,
+				AD6BA70F30A717DD0012AA8D /* HistoryPriceService.swift */,
+				AD6BA71730A7289C0012AA8D /* SnapShotService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -434,11 +455,15 @@
 				AD2B38E33034816200021E16 /* MostActiveView.swift in Sources */,
 				AD2B38F9303708C700021E16 /* ChangePasswordView.swift in Sources */,
 				AD2FAF91301A01C100D60CBE /* Constants.swift in Sources */,
+				AD6BA71A30A72C040012AA8D /* SnapShotViewModel.swift in Sources */,
 				AD171F803030EE62003D1CCD /* StockSyncService.swift in Sources */,
 				AD834D503090BB5F00A2ABEE /* SearchResponse.swift in Sources */,
 				AD2FAF9E301A05B900D60CBE /* LoginReponse.swift in Sources */,
 				ADA9A6C030989F98004D052B /* RegisterService.swift in Sources */,
+				AD6BA71630A727FD0012AA8D /* SnapShotResponse.swift in Sources */,
 				ADA9A6A430960C3A004D052B /* WhoAmIModel.swift in Sources */,
+				AD6BA71030A717DD0012AA8D /* HistoryPriceService.swift in Sources */,
+				AD6BA70E30A716EE0012AA8D /* HistoryPriceResponse.swift in Sources */,
 				ADA9A6C23098AD4B004D052B /* RegisterViewModel.swift in Sources */,
 				AD2B38F13037058000021E16 /* SessionManager.swift in Sources */,
 				AD834DB530911CD200A2ABEE /* StockDetailView.swift in Sources */,
@@ -454,11 +479,14 @@
 				AD2FAFA4301A0AD600D60CBE /* LoginView.swift in Sources */,
 				ADA9A6AA309616C5004D052B /* WhoAmIView.swift in Sources */,
 				AD2B38F53037086F00021E16 /* ChangePasswordRequest.swift in Sources */,
+				AD6BA71830A7289C0012AA8D /* SnapShotService.swift in Sources */,
 				ADBA8F983088DF4700CDADF0 /* CandlesView.swift in Sources */,
 				ADA9A6BE30989E33004D052B /* RegisterModel.swift in Sources */,
+				AD6BA71430A71F4C0012AA8D /* TestView.swift in Sources */,
 				AD2FAF96301A03F900D60CBE /* AuthService.swift in Sources */,
 				AD2B38E930348CFF00021E16 /* TopMoversViewModel.swift in Sources */,
 				AD834DB23091001D00A2ABEE /* SearchView.swift in Sources */,
+				AD6BA71230A71ACA0012AA8D /* HistoricPriceViewModel.swift in Sources */,
 				AD2B38DF303478AC00021E16 /* MostActiveResponse.swift in Sources */,
 				AD2B38E530348A8300021E16 /* TopMoversResponse.swift in Sources */,
 				AD2B38F7303708A400021E16 /* ChangePasswordViewModel.swift in Sources */,

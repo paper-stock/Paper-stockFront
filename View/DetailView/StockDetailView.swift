@@ -10,6 +10,7 @@ import SwiftUI
 struct StockDetailView: View {
     let response: SearchResponse
     @StateObject private var service = LivePriceService()
+    @StateObject private var snapShot = SnapShotViewModel()
     var body: some View {
         VStack{
             HStack(spacing: 20){
@@ -32,9 +33,18 @@ struct StockDetailView: View {
                         .foregroundColor(.secondary)
                 }
                 if let price = service.newestPrice?.p {
+
                     Text(price, format: .currency(code: "USD"))
                         .font(.title2)
+
+                } else if service.newestPrice?.p == nil,
+                          let snap = snapShot.model.first {
+
+                    Text(snap.price, format: .currency(code: "USD"))
+                        .font(.title2)
+
                 } else {
+
                     ProgressView()
                 }
                     
@@ -44,8 +54,13 @@ struct StockDetailView: View {
                 .frame(height: 400)
         }
         .task {
+                await snapShot.lastPrice(symbol: response.symbol)
+                }
+        
+        .task {
             do { try await service.connect(symbol: response.symbol) }
-            catch { service.errorMessage = error.localizedDescription }
+            catch {
+                service.errorMessage = error.localizedDescription }
         }
         .onDisappear {
             service.disconnect()

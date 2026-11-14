@@ -21,7 +21,7 @@ struct MainTabView: View {
             .tabItem { Label("Search", systemImage: "magnifyingglass") }
 
             NavigationStack {
-                WhoAmIView()
+                TestView()
             }
             .tabItem { Label("Profil", systemImage: "person") }
         }

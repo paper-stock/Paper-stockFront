@@ -8,9 +8,8 @@
 import Foundation
 
 struct WhoAmIModelResponse: Decodable {
-    let id: String
-    let appUserId: String
     let email: String
     let role: String
-    let enabled: Bool 
+    let enabled: Bool
+    let displayName: String
 }

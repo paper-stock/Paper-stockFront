@@ -16,6 +16,7 @@ struct WhoAmIView: View {
             } else if let error = viewModel.errorMessage {
                 Text(error)
             } else if let user = viewModel.user {
+                Text(user.displayName)
                 Text(user.email)
             }
         }
