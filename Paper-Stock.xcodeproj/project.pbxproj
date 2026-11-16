@@ -28,6 +28,12 @@
 		AD2FAFA0301A090800D60CBE /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2FAF9F301A090400D60CBE /* TokenStore.swift */; };
 		AD2FAFA2301A0AB700D60CBE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2FAFA1301A0AB700D60CBE /* LoginViewModel.swift */; };
 		AD2FAFA4301A0AD600D60CBE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2FAFA3301A0AD600D60CBE /* LoginView.swift */; };
+		AD56BBF030AB0EE0009CDD3C /* LogoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BBEF30AB0EE0009CDD3C /* LogoViewModel.swift */; };
+		AD56BBF230AB0F31009CDD3C /* LogoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BBF130AB0F31009CDD3C /* LogoService.swift */; };
+		AD56BBF430AB131D009CDD3C /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BBF330AB131D009CDD3C /* LogoView.swift */; };
+		AD56BBF630AB6EB0009CDD3C /* PlaceOrderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BBF530AB6EB0009CDD3C /* PlaceOrderModel.swift */; };
+		AD56BBFD30ABA68B009CDD3C /* CancelOrderResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BBFC30ABA68B009CDD3C /* CancelOrderResponse.swift */; };
+		AD56BC0630ABAD5D009CDD3C /* AddFundsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD56BC0530ABAD5D009CDD3C /* AddFundsRequest.swift */; };
 		AD6BA70E30A716EE0012AA8D /* HistoryPriceResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA70D30A716EE0012AA8D /* HistoryPriceResponse.swift */; };
 		AD6BA71030A717DD0012AA8D /* HistoryPriceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA70F30A717DD0012AA8D /* HistoryPriceService.swift */; };
 		AD6BA71230A71ACA0012AA8D /* HistoricPriceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BA71130A71ACA0012AA8D /* HistoricPriceViewModel.swift */; };
@@ -99,6 +105,12 @@
 		AD2FAF9F301A090400D60CBE /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
 		AD2FAFA1301A0AB700D60CBE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AD2FAFA3301A0AD600D60CBE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AD56BBEF30AB0EE0009CDD3C /* LogoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoViewModel.swift; sourceTree = "<group>"; };
+		AD56BBF130AB0F31009CDD3C /* LogoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoService.swift; sourceTree = "<group>"; };
+		AD56BBF330AB131D009CDD3C /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
+		AD56BBF530AB6EB0009CDD3C /* PlaceOrderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceOrderModel.swift; sourceTree = "<group>"; };
+		AD56BBFC30ABA68B009CDD3C /* CancelOrderResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelOrderResponse.swift; sourceTree = "<group>"; };
+		AD56BC0530ABAD5D009CDD3C /* AddFundsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFundsRequest.swift; sourceTree = "<group>"; };
 		AD6BA70D30A716EE0012AA8D /* HistoryPriceResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPriceResponse.swift; sourceTree = "<group>"; };
 		AD6BA70F30A717DD0012AA8D /* HistoryPriceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryPriceService.swift; sourceTree = "<group>"; };
 		AD6BA71130A71ACA0012AA8D /* HistoricPriceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricPriceViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +169,16 @@
 			path = "Paper-StockUITests";
 			sourceTree = "<group>";
 		};
+		AD56BBF730AB728E009CDD3C /* Orders */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		AD56BC0130ABAA9C009CDD3C /* Orders */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Orders;
+			sourceTree = "<group>";
+		};
 		ADA9A68930936311004D052B /* WebSocket */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = WebSocket;
@@ -192,6 +214,7 @@
 		AD2FAEE73019FFBA00D60CBE = {
 			isa = PBXGroup;
 			children = (
+				AD56BC0430ABAD41009CDD3C /* Admin */,
 				ADA9A68930936311004D052B /* WebSocket */,
 				AD2FAF94301A03E700D60CBE /* Services */,
 				AD2FAF90301A01C100D60CBE /* Constants.swift */,
@@ -220,6 +243,7 @@
 		AD2FAF1A3019FFCD00D60CBE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AD56BBFE30ABA759009CDD3C /* Orders */,
 				ADA9A6BD30989E29004D052B /* RegisterModel.swift */,
 				AD2FAF9D301A05B200D60CBE /* LoginReponse.swift */,
 				AD2FAF9B301A057600D60CBE /* LoginRequest.swift */,
@@ -238,6 +262,7 @@
 		AD2FAF1B3019FFD700D60CBE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AD56BC0130ABAA9C009CDD3C /* Orders */,
 				AD2FAFA1301A0AB700D60CBE /* LoginViewModel.swift */,
 				AD2B38E030347FFB00021E16 /* MostActiveViewModel.swift */,
 				AD2B38E830348CFF00021E16 /* TopMoversViewModel.swift */,
@@ -248,6 +273,7 @@
 				ADA9A6C13098AD4B004D052B /* RegisterViewModel.swift */,
 				AD6BA71130A71ACA0012AA8D /* HistoricPriceViewModel.swift */,
 				AD6BA71930A72C040012AA8D /* SnapShotViewModel.swift */,
+				AD56BBEF30AB0EE0009CDD3C /* LogoViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -266,6 +292,7 @@
 				ADA9A6A9309616C5004D052B /* WhoAmIView.swift */,
 				ADA9A6C53098B69F004D052B /* RegisterView.swift */,
 				AD6BA71330A71F4C0012AA8D /* TestView.swift */,
+				AD56BBF330AB131D009CDD3C /* LogoView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,6 +300,7 @@
 		AD2FAF94301A03E700D60CBE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AD56BBF730AB728E009CDD3C /* Orders */,
 				AD8E778B30A32170008C9009 /* test.swift */,
 				AD2FAF9F301A090400D60CBE /* TokenStore.swift */,
 				AD2FAF95301A03F900D60CBE /* AuthService.swift */,
@@ -284,8 +312,26 @@
 				ADA9A6BF30989F98004D052B /* RegisterService.swift */,
 				AD6BA70F30A717DD0012AA8D /* HistoryPriceService.swift */,
 				AD6BA71730A7289C0012AA8D /* SnapShotService.swift */,
+				AD56BBF130AB0F31009CDD3C /* LogoService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		AD56BBFE30ABA759009CDD3C /* Orders */ = {
+			isa = PBXGroup;
+			children = (
+				AD56BBFC30ABA68B009CDD3C /* CancelOrderResponse.swift */,
+				AD56BBF530AB6EB0009CDD3C /* PlaceOrderModel.swift */,
+			);
+			path = Orders;
+			sourceTree = "<group>";
+		};
+		AD56BC0430ABAD41009CDD3C /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				AD56BC0530ABAD5D009CDD3C /* AddFundsRequest.swift */,
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 		AD834DB330911C9E00A2ABEE /* DetailView */ = {
@@ -315,6 +361,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				AD2FAEF23019FFBB00D60CBE /* Paper-Stock */,
+				AD56BBF730AB728E009CDD3C /* Orders */,
+				AD56BC0130ABAA9C009CDD3C /* Orders */,
 				ADA9A68930936311004D052B /* WebSocket */,
 			);
 			name = "Paper-Stock";
@@ -446,6 +494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD2FAF9C301A057600D60CBE /* LoginRequest.swift in Sources */,
+				AD56BBF430AB131D009CDD3C /* LogoView.swift in Sources */,
 				AD834D543090BC6000A2ABEE /* SearchService.swift in Sources */,
 				AD834DB03090F79300A2ABEE /* SearchViewModel.swift in Sources */,
 				ADA9A6C63098B69F004D052B /* RegisterView.swift in Sources */,
@@ -456,6 +505,7 @@
 				AD2B38F9303708C700021E16 /* ChangePasswordView.swift in Sources */,
 				AD2FAF91301A01C100D60CBE /* Constants.swift in Sources */,
 				AD6BA71A30A72C040012AA8D /* SnapShotViewModel.swift in Sources */,
+				AD56BBFD30ABA68B009CDD3C /* CancelOrderResponse.swift in Sources */,
 				AD171F803030EE62003D1CCD /* StockSyncService.swift in Sources */,
 				AD834D503090BB5F00A2ABEE /* SearchResponse.swift in Sources */,
 				AD2FAF9E301A05B900D60CBE /* LoginReponse.swift in Sources */,
@@ -471,6 +521,8 @@
 				ADBA8F963088D93600CDADF0 /* CandleViewModel.swift in Sources */,
 				ADA9A6A630960CD3004D052B /* WhoAmIService.swift in Sources */,
 				AD2FAFA2301A0AB700D60CBE /* LoginViewModel.swift in Sources */,
+				AD56BBF230AB0F31009CDD3C /* LogoService.swift in Sources */,
+				AD56BBF030AB0EE0009CDD3C /* LogoViewModel.swift in Sources */,
 				AD2B38F3303705C600021E16 /* LogoutButton.swift in Sources */,
 				AD8E778C30A32173008C9009 /* test.swift in Sources */,
 				AD171F7E3030E670003D1CCD /* MainTabView.swift in Sources */,
@@ -480,6 +532,7 @@
 				ADA9A6AA309616C5004D052B /* WhoAmIView.swift in Sources */,
 				AD2B38F53037086F00021E16 /* ChangePasswordRequest.swift in Sources */,
 				AD6BA71830A7289C0012AA8D /* SnapShotService.swift in Sources */,
+				AD56BBF630AB6EB0009CDD3C /* PlaceOrderModel.swift in Sources */,
 				ADBA8F983088DF4700CDADF0 /* CandlesView.swift in Sources */,
 				ADA9A6BE30989E33004D052B /* RegisterModel.swift in Sources */,
 				AD6BA71430A71F4C0012AA8D /* TestView.swift in Sources */,
@@ -490,6 +543,7 @@
 				AD2B38DF303478AC00021E16 /* MostActiveResponse.swift in Sources */,
 				AD2B38E530348A8300021E16 /* TopMoversResponse.swift in Sources */,
 				AD2B38F7303708A400021E16 /* ChangePasswordViewModel.swift in Sources */,
+				AD56BC0630ABAD5D009CDD3C /* AddFundsRequest.swift in Sources */,
 				AD2B38E130347FFB00021E16 /* MostActiveViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
