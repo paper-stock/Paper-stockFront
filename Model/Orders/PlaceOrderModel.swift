@@ -20,11 +20,11 @@ extension OrderSide: Identifiable {
 struct PlaceOrderRequest: Encodable {
     var orderSide: OrderSide
     let orderType: String
-    let stockSymbol: String
-    let funds: Double?
-    let shares: Double? = nil
-    let limitPrice: Double? = nil
-    let stopPrice: Double? = nil
+    var stockSymbol: String
+    var funds: Double?
+    var shares: Double? = nil
+    var limitPrice: Double? = nil
+    var stopPrice: Double? = nil
 }
 
 struct PlaceOrderResponse: Decodable {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct GetAllOrdersResponse: Encodable {
+struct GetAllOrdersResponse: Decodable, Identifiable{
     let id: String
     let appUserId: String
     let orderSide: String
@@ -20,7 +20,7 @@ struct GetAllOrdersResponse: Encodable {
     let reservedShares: Double?
     let limitPrice: Double?
     let stopPrice: Double?
-    let createdAtMarketTime: Date
-    let triggeredAt: Double?
+    let createdAtMarketTime: String
+    let triggeredAt: String?
 }
 

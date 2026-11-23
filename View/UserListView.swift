@@ -9,8 +9,35 @@ import SwiftUI
 
 struct UserListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+
+            NavigationStack{
+                List {
+                    NavigationLink{
+                        WhoAmIView()
+                    }label: {
+                        Label("My acount", systemImage: "person.crop.circle")
+                    }
+                    
+                    NavigationLink {
+                        ChangePasswordView()
+                    } label: {
+                        Label("Change password", systemImage: "lock.fill")
+                    }
+                    
+                    NavigationLink{
+                        GetAllOrdersView()
+                    } label: {
+                        Label("Orders", systemImage: "dollarsign.arrow.trianglehead.counterclockwise.rotate.90")
+                    }
+                    
+                }
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        LogoutButton()
+                    }
+                }
+            }
+        }
 }
 
 #Preview {

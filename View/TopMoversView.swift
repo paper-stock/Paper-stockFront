@@ -29,12 +29,7 @@ struct TopMoversView: View {
 
                     List(viewModel.stocks) { stock in
                         HStack {
-                            AsyncImage(url: URL(string: stock.logoUrl)) { image in
-                                image.resizable()
-                            } placeholder: {
-                                ProgressView()
-                            }
-                            .frame(width: 32, height: 32)
+                            LogoView(symbol: stock.symbol)
 
                             VStack(alignment: .leading) {
                                 Text(stock.symbol).bold()

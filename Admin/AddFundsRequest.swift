@@ -18,10 +18,12 @@ class AddFundsService {
             throw URLError(.badURL)
         }
         let body = AddFundsRequest(amount: 500)
+        let token = try await AuthService.shared.validAccessToken()
         
-        var request = URLRequest(url:url)
+        var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
         request.httpBody = try JSONEncoder().encode(body)
         
         let (data, response) = try await URLSession.shared.data(for: request)
@@ -33,15 +35,24 @@ class AddFundsService {
     }
 }
 
+
 @MainActor
 class AddFundViewModel: ObservableObject {
-    @Published private var model: AddFundsRequest?
-    private let service = AddFundsService()
-    @Published private var errorMessage: String?
+    @Published var errorMessage: String?
+    @Published var isLoading = false
+    @Published var didSucceed = false
     
-    func addFunds() async{
+    private let service = AddFundsService()
+    
+    func addFunds() async {
+        isLoading = true
+        didSucceed = false
+        errorMessage = nil
+        defer { isLoading = false }
+        
         do {
-            let result  = try await service.getFund()
+            try await service.getFund()
+            didSucceed = true
         } catch {
             errorMessage = error.localizedDescription
         }

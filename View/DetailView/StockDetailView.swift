@@ -11,6 +11,7 @@ struct StockDetailView: View {
     let response: SearchResponse
     @StateObject private var service = LivePriceService()
     @StateObject private var snapShot = SnapShotViewModel()
+    @StateObject private var orderVM = PlaceOrderViewModel()
     var body: some View {
         VStack{
             HStack(spacing: 20){
@@ -53,6 +54,11 @@ struct StockDetailView: View {
             CandlesView(symbol: response.symbol)
                 .frame(height: 400)
         }
+        .safeAreaInset(edge: .bottom) {
+            TradeButtonsView(viewModel: orderVM)
+                .padding()
+                .background(.bar)
+        }
         .task {
                 await snapShot.lastPrice(symbol: response.symbol)
                 }
@@ -62,6 +68,9 @@ struct StockDetailView: View {
             catch {
                 service.errorMessage = error.localizedDescription }
         }
+        .onAppear {
+                    orderVM.order.stockSymbol = response.symbol
+                }
         .onDisappear {
             service.disconnect()
         }

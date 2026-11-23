@@ -10,11 +10,11 @@ import Foundation
 
 class GetAllOrdersService {
     
-    func getAllOrders() async throws -> [GetAllOrdersResponse] {
+    func getAllOrders(status: String? = nil) async throws -> [GetAllOrdersResponse] {
         guard var components = URLComponents(string: "\(Constants.baseUrl)/orders") else {
             throw URLError(.badURL)
         }
-        components.queryItems = [URLQueryItem(name: "status", value: "PENDING")]
+        components.queryItems = [URLQueryItem(name: "status", value: status)]
         
         guard let url = components.url else {
             throw URLError(.badURL)
@@ -35,6 +35,8 @@ class GetAllOrdersService {
         do {
             return try JSONDecoder().decode([GetAllOrdersResponse].self, from: data)
         } catch {
+            print("Decoding error:", error)
+            print(String(data: data, encoding: .utf8) ?? "brak body")
             throw URLError(.cannotParseResponse)
         }
         

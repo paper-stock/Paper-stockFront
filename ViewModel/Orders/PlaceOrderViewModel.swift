@@ -10,9 +10,10 @@ import Combine
 
 @MainActor
 class PlaceOrderViewModel: ObservableObject {
-    @Published var order = PlaceOrderRequest(orderSide: .buy, orderType: "MARKET", stockSymbol: "", funds: nil)
+    @Published var order = PlaceOrderRequest(orderSide: .buy, orderType: "MARKET", stockSymbol: "", funds: nil, shares: nil)
     @Published var errorMessage: String?
     @Published var isLoading: Bool = false
+    @Published var isSucced: Bool = false
     @Published var placedOrder: Bool = false
     private let service = PlaceOrderService()
     
@@ -21,27 +22,30 @@ class PlaceOrderViewModel: ObservableObject {
         let selectedSide = side
         order.orderSide = selectedSide
     }
-    func order() async {
+    func placeOrder() async {
         isLoading = true
         placedOrder = false
         errorMessage = nil
         
         defer {isLoading = false}
         
-        if order.orderSide == .buy {
+        switch order.orderSide {
+        case .buy:
             guard let funds = order.funds, funds > 0 else {
                 errorMessage = "Please enter a valid order amount"
                 return
             }
+        case .sell:
+            guard let shares = order.shares, shares > 0 else {
+                errorMessage = "Please enter a valid number of shares"
+                return
+            }
         }
         
-//        if order.orderSide == .sell {
-//            guard let shares = order.shares =
-//        }
-        
         do {
-            let result = try await service.placeOrder(funds: order.funds, symbol: order.stockSymbol, side: order.orderSide)
+            let result = try await service.placeOrder(funds: order.funds, symbol: order.stockSymbol, side: order.orderSide, shares: order.shares)
             placedOrder = true
+            isSucced = true
         } catch {
             errorMessage = error.localizedDescription
         }

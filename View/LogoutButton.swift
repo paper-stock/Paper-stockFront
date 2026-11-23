@@ -11,8 +11,9 @@ struct LogoutButton: View {
     @EnvironmentObject private var viewModel: LoginViewModel
 
     var body: some View {
-        Button("Wyloguj", role: .destructive) {
+        Button("Logout", role: .destructive) {
             viewModel.logout()
+                
         }
     }
 }
