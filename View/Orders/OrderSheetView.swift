@@ -47,7 +47,7 @@ struct OrderSheetView: View {
                 Text(error)
                     .foregroundStyle(.red)
             }
-            if viewModel.isSucced {
+            if viewModel.isSucceeded {
                 Text("The order has been placed ")
                     .foregroundStyle(.green)
             }
@@ -59,6 +59,7 @@ struct OrderSheetView: View {
         .onAppear {
             viewModel.errorMessage = nil
             viewModel.placedOrder = false
+            viewModel.isSucceeded = false
         }
     
     }

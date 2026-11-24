@@ -2,12 +2,12 @@
 //  ChangePasswordRequest.swift
 //  Paper-Stock
 //
-//  Created by Szymon on 20/08/2026.
+//  Created by Szymon on 24/11/2026.
 //
 
 import Foundation
 
 struct ChangePasswordRequest: Codable {
-    let oldPassword: String
-    let newPassword: String
+    var oldPassword: String
+    var newPassword: String
 }

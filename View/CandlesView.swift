@@ -144,7 +144,7 @@ struct CandlesView: View {
                     Text(timeframe.label).tag(timeframe)
                 }
             }
-            .pickerStyle(.menu)
+            .pickerStyle(.segmented)
         }
         .padding()
         .task(id: viewModel.selectedTimeframe) {

@@ -8,7 +8,7 @@ import SwiftUI
 
 struct GetAllOrdersView: View {
     @StateObject private var viewModel = GetAllOrdersViewModel()
-
+    @StateObject private var cancelModel = CancelOrderViewModel()
     var body: some View {
         Group {
             if viewModel.isLoading {
@@ -28,13 +28,41 @@ struct GetAllOrdersView: View {
                     .foregroundStyle(.secondary)
             } else {
                 List(viewModel.getData) { order in
-                    HStack {
-                        Text(order.stockSymbol)
-                        Spacer()
+                    HStack{
+                        LogoView(symbol: order.stockSymbol)
+                        VStack(alignment: .leading, spacing: 2){
+                            Text(order.stockSymbol)
+                                .font(.headline)
+                        }
                         Text(order.orderStatus)
-                        Text(order.createdAtMarketTime)
+                        Text(order.orderSide)
+                            .font(.subheadline)
+//                        Spacer().frame(width: 100)
+                        VStack{
+                            
+                            Text(order.createdAtMarketTime, format: .dateTime
+                                .hour()
+                                .minute())
+                            
+                            Text(order.createdAtMarketTime, format: .dateTime
+                                .day(.twoDigits)
+                                .month(.twoDigits)
+                                .year(.twoDigits))
+                                
+                        }
+                    }
+                    .swipeActions(edge: .trailing, allowsFullSwipe: false){
+                        if order.orderStatus == "PENDING"{
+                            Button(role: .destructive) {
+                                Task{await cancelModel.cancel(id: order.id)}
+                            } label: {
+                                Text("Cancel")
+                                    
+                            }.tint(.red)
+                        }
                     }
                 }
+                
             }
         }
         .task {

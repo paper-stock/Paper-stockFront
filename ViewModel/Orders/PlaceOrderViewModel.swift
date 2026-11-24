@@ -13,9 +13,11 @@ class PlaceOrderViewModel: ObservableObject {
     @Published var order = PlaceOrderRequest(orderSide: .buy, orderType: "MARKET", stockSymbol: "", funds: nil, shares: nil)
     @Published var errorMessage: String?
     @Published var isLoading: Bool = false
-    @Published var isSucced: Bool = false
+    @Published var isSucceeded: Bool = false
+    @Published var isActive: Bool = false 
     @Published var placedOrder: Bool = false
     private let service = PlaceOrderService()
+    @Published var orderResponse: PlaceOrderResponse?
     
     
     func selectOrderSide(side: OrderSide){
@@ -38,16 +40,20 @@ class PlaceOrderViewModel: ObservableObject {
         case .sell:
             guard let shares = order.shares, shares > 0 else {
                 errorMessage = "Please enter a valid number of shares"
+                isSucceeded = false
                 return
             }
         }
-        
-        do {
-            let result = try await service.placeOrder(funds: order.funds, symbol: order.stockSymbol, side: order.orderSide, shares: order.shares)
-            placedOrder = true
-            isSucced = true
-        } catch {
-            errorMessage = error.localizedDescription
+            
+            do {
+                _ = try await service.placeOrder(funds: order.funds, symbol: order.stockSymbol, side: order.orderSide, shares: order.shares)
+                placedOrder = true
+                isSucceeded = true
+            } catch {
+                print(error)
+                errorMessage = error.localizedDescription
+                isSucceeded = false
+            }
         }
     }
-}
+

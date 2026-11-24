@@ -15,12 +15,12 @@ struct GetAllOrdersResponse: Decodable, Identifiable{
     let orderStatus: String
     let stockId: String
     let stockSymbol: String
-    let reservedFunds: Double 
+    let reservedFunds: Double?
     let refundedFunds: Double? 
     let reservedShares: Double?
     let limitPrice: Double?
     let stopPrice: Double?
-    let createdAtMarketTime: String
-    let triggeredAt: String?
+    let createdAtMarketTime: Date
+    let triggeredAt: Date?
 }
 

@@ -22,7 +22,7 @@ struct PlaceOrderRequest: Encodable {
     let orderType: String
     var stockSymbol: String
     var funds: Double?
-    var shares: Double? = nil
+    var shares: Double? 
     var limitPrice: Double? = nil
     var stopPrice: Double? = nil
 }
@@ -35,7 +35,7 @@ struct PlaceOrderResponse: Decodable {
     let orderStatus: String
     let stockId: String
     let stockSymbol: String
-    let reservedFunds: Double
+    let reservedFunds: Double?
     let refundedFunds: Double?
     let reservedShares: Double?
     let limitPrice: Double?

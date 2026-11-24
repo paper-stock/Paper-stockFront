@@ -30,10 +30,14 @@ class GetAllOrdersService {
         guard let httpResponse = response as? HTTPURLResponse,
               (200...299).contains(httpResponse.statusCode) else {
             throw URLError(.badServerResponse)
+            
         }
         
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        
         do {
-            return try JSONDecoder().decode([GetAllOrdersResponse].self, from: data)
+            return try decoder.decode([GetAllOrdersResponse].self, from: data)
         } catch {
             print("Decoding error:", error)
             print(String(data: data, encoding: .utf8) ?? "brak body")

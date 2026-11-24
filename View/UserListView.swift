@@ -30,6 +30,12 @@ struct UserListView: View {
                         Label("Orders", systemImage: "dollarsign.arrow.trianglehead.counterclockwise.rotate.90")
                     }
                     
+                    NavigationLink{
+                            GetAllPostionsView()
+                    } label: {
+                        Label("Positions", systemImage: "dollarsign.arrow.trianglehead.counterclockwise.rotate.90")
+                    }
+                    
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {

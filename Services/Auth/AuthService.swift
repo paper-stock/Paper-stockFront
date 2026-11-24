@@ -136,34 +136,4 @@ class AuthService {
 
         store.clear()
     }
-    
-    func changePassword(oldPassword: String, newPassword: String) async throws {
-        guard let url = URL(string: "\(Constants.baseUrl)/auth/change-password") else {
-            throw URLError(.badURL)
-        }
-
-        let token = try await validAccessToken()
-
-        let body = ChangePasswordRequest(oldPassword: oldPassword, newPassword: newPassword)
-
-        var urlRequest = URLRequest(url: url)
-        urlRequest.httpMethod = "POST"
-        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
-        urlRequest.httpBody = try JSONEncoder().encode(body)
-
-        let (data, response) = try await URLSession.shared.data(for: urlRequest)
-        print("Odpowiedź serwera (change-password):", String(data: data, encoding: .utf8) ?? "brak")
-
-        if let httpResponse = response as? HTTPURLResponse {
-            print("Status code:", httpResponse.statusCode)
-            if httpResponse.statusCode == 401 || httpResponse.statusCode == 403 {
-                throw AuthError.invalidCredentials
-            }
-        }
-        guard let httpResponse = response as? HTTPURLResponse,
-              (200...299).contains(httpResponse.statusCode) else {
-            throw URLError(.badServerResponse)
-        }
     }
-}

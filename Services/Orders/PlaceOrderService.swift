@@ -8,7 +8,7 @@
 import Foundation
 
 class PlaceOrderService {
-    func placeOrder(funds: Double?, symbol: String, side: OrderSide, shares: Double?) async throws{
+    func placeOrder(funds: Double?, symbol: String, side: OrderSide, shares: Double?) async throws -> PlaceOrderResponse{
         guard let url = URL(string: "\(Constants.baseUrl)/orders") else {
             throw URLError(.badURL)
         }
@@ -28,6 +28,8 @@ class PlaceOrderService {
               (200...299).contains(httpResponse.statusCode) else {
             throw URLError(.badServerResponse)
         }
-        return
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .iso8601
+        return try decoder.decode(PlaceOrderResponse.self, from: data)
     }
 }

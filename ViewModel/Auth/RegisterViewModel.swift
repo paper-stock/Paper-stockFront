@@ -32,7 +32,6 @@ class RegisterViewModel: ObservableObject {
             isRegistered = true
         } catch {
             errorMessage = error.localizedDescription
-            print(error)
         }
     }
     

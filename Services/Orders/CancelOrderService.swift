@@ -8,7 +8,7 @@
 import Foundation
 
 class CancelOrderService {
-    func cancelConnection() async throws -> CancelOrderResponse{
+    func cancelConnection(id: String) async throws -> CancelOrderResponse{
         guard let url = URL(string: "\(Constants.baseUrl)/orders/cancel") else {
             throw URLError(.badURL)
         }
