@@ -34,6 +34,7 @@ struct SearchView: View {
                                         .font(.caption)
                                         .foregroundColor(.secondary)
                                 }
+                                PriceUpdatesView(symbol: stock.symbol)
                             }
                         }
                     }
